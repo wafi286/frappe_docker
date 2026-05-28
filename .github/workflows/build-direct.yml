@@ -1,0 +1,43 @@
+name: Build Custom Frappe Image (Direct Docker)
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Image tag (default: latest)'
+        required: false
+        default: 'latest'
+
+env:
+  IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/frappe-custom
+  TAG: ${{ inputs.tag || 'latest' }}
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Debug - Verify apps.json
+        run: |
+          echo "=== Checking apps.json ==="
+          ls -la apps.json
+          echo "=== Content ==="
+          cat apps.json
+          echo "=== JSON validation ==="
+          python3 -c "import json; d=json.load(open('apps.json')); print(f'Valid: {len(d)} apps')"
+
+      - name: Log in to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build image with direct docker command
+        run: |
+          docker buildx build             --file images/layered/Containerfile             --tag ${{ env.IMAGE_NAME }}:${{ env.TAG }}             --secret id=apps_json,src=apps.json             --build-arg FRAPPE_IMAGE_PREFIX=frappe             --build-arg FRAPPE_BRANCH=version-16             --cache-from type=gha             --cache-to type=gha,mode=max             --push             .
+
+      - name: Verify image
+        run: |
+          docker pull ${{ env.IMAGE_NAME }}:${{ env.TAG }}
+          docker run --rm ${{ env.IMAGE_NAME }}:${{ env.TAG }} bash -c "ls -la /home/frappe/frappe-bench/apps/"
