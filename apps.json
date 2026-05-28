@@ -1,74 +1,70 @@
 [
   {
-    "url": "https://github.com/frappe/frappe",
+    "url": "https://github.com/frappe/erpnext.git",
     "branch": "version-16"
   },
   {
-    "url": "https://github.com/frappe/erpnext",
+    "url": "https://github.com/frappe/hrms.git",
     "branch": "version-16"
   },
   {
-    "url": "https://github.com/frappe/hrms",
-    "branch": "version-16"
-  },
-  {
-    "url": "https://github.com/frappe/crm",
+    "url": "https://github.com/frappe/crm.git",
     "branch": "main"
   },
   {
-    "url": "https://github.com/frappe/helpdesk",
+    "url": "https://github.com/frappe/helpdesk.git",
     "branch": "main"
   },
   {
-    "url": "https://github.com/frappe/insights",
+    "url": "https://github.com/frappe/insights.git",
     "branch": "main"
   },
   {
-    "url": "https://github.com/frappe/gameplan",
+    "url": "https://github.com/frappe/gameplan.git",
     "branch": "main"
   },
   {
-    "url": "https://github.com/frappe/builder",
+    "url": "https://github.com/frappe/builder.git",
     "branch": "master"
   },
   {
-    "url": "https://github.com/frappe/drive",
+    "url": "https://github.com/frappe/drive.git",
     "branch": "main"
   },
   {
-    "url": "https://github.com/frappe/wiki",
+    "url": "https://github.com/frappe/wiki.git",
     "branch": "version-3"
   },
   {
-    "url": "https://github.com/frappe/lms",
+    "url": "https://github.com/frappe/lms.git",
     "branch": "main"
   },
   {
-    "url": "https://github.com/frappe/mail",
+    "url": "https://github.com/frappe/mail.git",
     "branch": "develop"
   },
   {
-    "url": "https://github.com/frappe/print_designer",
+    "url": "https://github.com/frappe/print_designer.git",
     "branch": "main"
   },
   {
-    "url": "https://github.com/frappe/offsite_backups",
+    "url": "https://github.com/frappe/offsite_backups.git",
     "branch": "develop"
   },
   {
-    "url": "https://github.com/frappe/meet",
+    "url": "https://github.com/frappe/meet.git",
     "branch": "develop"
   },
   {
-    "url": "https://github.com/frappe/books",
+    "url": "https://github.com/frappe/books.git",
     "branch": "master"
   },
   {
-    "url": "https://github.com/frappe/studio",
+    "url": "https://github.com/frappe/studio.git",
     "branch": "develop"
   },
   {
-    "url": "https://github.com/The-Commit-Company/Raven",
+    "url": "https://github.com/The-Commit-Company/Raven.git",
     "branch": "main"
   }
 ]
