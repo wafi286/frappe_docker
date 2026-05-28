@@ -44,10 +44,6 @@
     "branch": "develop"
   },
   {
-    "url": "https://github.com/frappe/books.git",
-    "branch": "master"
-  },
-  {
     "url": "https://github.com/frappe/studio.git",
     "branch": "develop"
   },
