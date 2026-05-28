@@ -37,11 +37,10 @@ jobs:
           fi
           python3 -c "import json; d=json.load(open('apps.json')); print(f'Valid JSON: {len(d)} apps')"
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-        with:
-          driver: docker-container
-          install: true
+      - name: Create docker-container builder
+        run: |
+          docker buildx create --use --name frappe-builder --driver docker-container || true
+          docker buildx inspect frappe-builder --bootstrap
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
