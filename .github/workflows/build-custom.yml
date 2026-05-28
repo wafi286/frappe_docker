@@ -68,8 +68,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          secrets: |
-            apps_json=apps.json
           build-args: |
             FRAPPE_IMAGE_PREFIX=frappe
             FRAPPE_BRANCH=version-16
