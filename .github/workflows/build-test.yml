@@ -1,0 +1,55 @@
+name: Build Custom Frappe Image (Test without secrets)
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Image tag (default: latest)'
+        required: false
+        default: 'latest'
+
+env:
+  IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/frappe-custom
+  TAG: ${{ inputs.tag || 'latest' }}
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Debug - Verify files
+        run: |
+          echo "=== Current directory ==="
+          pwd
+          echo "=== Files ==="
+          ls -la
+          echo "=== apps.json ==="
+          cat apps.json | head -10
+          echo "=== Size ==="
+          wc -c apps.json
+
+      - name: Create apps.json with inline content (debug)
+        run: |
+          # Vérifie que apps.json est valide
+          python3 -c "import json; d=json.load(open('apps.json')); print(f'Valid JSON: {len(d)} apps')"
+
+          # Copie dans un emplacement connu
+          mkdir -p /tmp/frappe-build
+          cp apps.json /tmp/frappe-build/apps.json
+
+      - name: Log in to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build image with explicit secret path
+        run: |
+          # Build avec le secret pointant vers le fichier absolu
+          docker buildx build             --file images/layered/Containerfile             --tag ${{ env.IMAGE_NAME }}:${{ env.TAG }}             --secret id=apps_json,src=/tmp/frappe-build/apps.json             --build-arg FRAPPE_IMAGE_PREFIX=frappe             --build-arg FRAPPE_BRANCH=version-16             --push             .
+
+      - name: Verify image
+        run: |
+          docker pull ${{ env.IMAGE_NAME }}:${{ env.TAG }}
+          docker run --rm ${{ env.IMAGE_NAME }}:${{ env.TAG }} bash -c "ls -la /home/frappe/frappe-bench/apps/"
