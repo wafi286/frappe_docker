@@ -8,6 +8,14 @@
     "branch": "version-16"
   },
   {
+    "url": "https://github.com/frappe/telephony.git",
+    "branch": "develop"
+  },
+  {
+    "url": "https://github.com/frappe/payments.git",
+    "branch": "version-16"
+  },
+  {
     "url": "https://github.com/frappe/crm.git",
     "branch": "main"
   },
@@ -17,10 +25,6 @@
   },
   {
     "url": "https://github.com/frappe/insights.git",
-    "branch": "main"
-  },
-  {
-    "url": "https://github.com/frappe/wiki.git",
     "branch": "version-3"
   },
   {
@@ -28,35 +32,71 @@
     "branch": "main"
   },
   {
-    "url": "https://github.com/frappe/mail.git",
-    "branch": "develop"
-  },
-  {
     "url": "https://github.com/frappe/print_designer.git",
     "branch": "main"
   },
   {
     "url": "https://github.com/frappe/offsite_backups.git",
-    "branch": "develop"
-  },
-  {
-    "url": "https://github.com/frappe/meet.git",
-    "branch": "develop"
+    "branch": "version-16"
   },
   {
     "url": "https://github.com/frappe/studio.git",
     "branch": "develop"
   },
   {
-    "url": "https://github.com/frappe/telephony.git",
-    "branch": "develop"
+    "url": "https://github.com/The-Commit-Company/raven.git",
+    "branch": "main"
   },
   {
-    "url": "https://github.com/frappe/payments.git",
+    "url": "https://github.com/frappe/gameplan.git",
+    "branch": "main"
+  },
+  {
+    "url": "https://github.com/frappe/drive.git",
+    "branch": "main"
+  },
+  {
+    "url": "https://github.com/vineyrawat/saas_theme.git",
     "branch": "version-16"
   },
   {
-    "url": "https://github.com/The-Commit-Company/raven.git",
-    "branch": "main"
+    "url": "https://github.com/Arus-Info/ProjectIT.git",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/shridarpatil/frappe_whatsapp.git",
+    "branch": "master"
+  },
+  {
+    "url": "https://github.com/shridarpatil/whatsapp_chat.git",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/shridarpatil/frappe_whatsapp_chatbot.git",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/nesscale-com/employee_self_service.git",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/itsdave-de/frappe-goes-paperless.git",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/frappe/eps.git",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/BrainWise-DEV/POSNext.git",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/navariltd/Frappe-Workflow-Extension.git",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/navariltd/zkteco-biometric-integration.git",
+    "branch": "version-16"
   }
 ]
