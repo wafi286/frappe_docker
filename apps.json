@@ -48,7 +48,15 @@
     "branch": "develop"
   },
   {
-    "url": "https://github.com/The-Commit-Company/Raven.git",
+    "url": "https://github.com/frappe/telephony.git",
+    "branch": "develop"
+  },
+  {
+    "url": "https://github.com/frappe/payments.git",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/The-Commit-Company/raven.git",
     "branch": "main"
   }
 ]
