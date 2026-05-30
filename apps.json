@@ -52,10 +52,6 @@
     "branch": "main"
   },
   {
-    "url": "https://github.com/frappe/drive.git",
-    "branch": "main"
-  },
-  {
     "url": "https://github.com/vineyrawat/saas_theme.git",
     "branch": "version-16"
   },
