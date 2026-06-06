@@ -6,9 +6,5 @@
   {
     "url": "https://github.com/frappe/hrms.git",
     "branch": "version-16"
-  },
-  {
-    "url": "https://github.com/wafi286/gestion_flux_financiers.git",
-    "branch": "main"
   }
 ]
